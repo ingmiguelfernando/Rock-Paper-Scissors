@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Rock_Paper_Scissors.Data;
 using Rock_Paper_Scissors.Dtos;
 using Rock_Paper_Scissors.Models;
@@ -23,7 +20,7 @@ namespace Rock_Paper_Scissors.Controllers
 
 
         public GameController(IGameRepository gameRepository, IMapper mapper)
-        {           
+        {
             _gameRepository = gameRepository;
             _mapper = mapper;
         }
