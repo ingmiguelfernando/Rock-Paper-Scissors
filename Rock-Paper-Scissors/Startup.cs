@@ -11,6 +11,8 @@ using Rock_Paper_Scissors.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AutoMapper;
+using Rock_Paper_Scissors.Helpers;
 
 namespace Rock_Paper_Scissors
 {
@@ -35,12 +37,16 @@ namespace Rock_Paper_Scissors
 
             services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+            services.AddScoped<IGameRepository, GameRepository>();
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddScoped<IGameRepository, GameRepository>();
+            services.AddAutoMapper(typeof(AutoMapperProfiles));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

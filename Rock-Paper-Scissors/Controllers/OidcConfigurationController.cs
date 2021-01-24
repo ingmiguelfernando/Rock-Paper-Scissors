@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -19,7 +20,7 @@ namespace Rock_Paper_Scissors.Controllers
         [HttpGet("_configuration/{clientId}")]
         public IActionResult GetClientRequestParameters([FromRoute] string clientId)
         {
-            var parameters = ClientRequestParametersProvider.GetClientParameters(HttpContext, clientId);
+            var parameters = ClientRequestParametersProvider.GetClientParameters(HttpContext, clientId);            
             return Ok(parameters);
         }
     }
