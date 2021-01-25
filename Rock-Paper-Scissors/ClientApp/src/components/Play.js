@@ -72,7 +72,7 @@ export const Play = () => {
     <Container className="text-center text-md-center">
       <h2 className="text-danger">Round {round}</h2>
       <Row>
-        <Col>
+        <Col xs="20" md="4" sm="6">
           <div>WIN</div>
           <span>{userWins}</span>
           <Card className="d-flex align-items-center">
@@ -114,7 +114,7 @@ export const Play = () => {
             </CardBody>
           </Card>
         </Col>
-        <Col>
+        <Col xs="20" md="4" sm="6">
           <div>TIES</div>
           <span>{ties}</span>
           <h1 className="h-60 pt-5 align-middle">Vs</h1>
@@ -131,30 +131,26 @@ export const Play = () => {
             </span>
           )}
         </Col>
-        <Col>
-          <Col>
-            <div>WIN</div>
-            <span>{machineWins}</span>
-            <Card className="d-flex align-items-center">
-              {machineIconSelected === "BsQuestion" && (
-                <BsQuestion size={200} />
-              )}
-              {machineIconSelected === "FaRegHandRock" && (
-                <FaRegHandRock size={200} />
-              )}
-              {machineIconSelected === "FaRegHandScissors" && (
-                <FaRegHandScissors size={200} />
-              )}
-              {machineIconSelected === "FaRegHandPaper" && (
-                <FaRegHandPaper size={200} />
-              )}
-              <CardBody>
-                <CardText className="text-primary">
-                  You can't beat me ...
-                </CardText>
-              </CardBody>
-            </Card>
-          </Col>
+        <Col xs="20" md="4" sm="6">
+          <div>WIN</div>
+          <span>{machineWins}</span>
+          <Card className="d-flex align-items-center">
+            {machineIconSelected === "BsQuestion" && <BsQuestion size={200} />}
+            {machineIconSelected === "FaRegHandRock" && (
+              <FaRegHandRock size={200} />
+            )}
+            {machineIconSelected === "FaRegHandScissors" && (
+              <FaRegHandScissors size={200} />
+            )}
+            {machineIconSelected === "FaRegHandPaper" && (
+              <FaRegHandPaper size={200} />
+            )}
+            <CardBody>
+              <CardText className="text-primary">
+                You can't beat me ...
+              </CardText>
+            </CardBody>
+          </Card>
         </Col>
       </Row>
     </Container>

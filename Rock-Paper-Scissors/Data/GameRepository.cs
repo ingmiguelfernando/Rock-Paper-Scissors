@@ -27,7 +27,7 @@ namespace Rock_Paper_Scissors.Data
 
         public async Task<IEnumerable<GameStatistics>> GetGameStatistics(string userId)
         {
-            return await _context.GameStatistics.Where(u => u.UserId.Equals(userId)).ToListAsync();            
+            return await _context.GameStatistics.OrderBy(g => g.Created).Take(10).Where(u => u.UserId.Equals(userId)).ToListAsync();            
         }
     }
 }
